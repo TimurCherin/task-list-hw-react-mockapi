@@ -1,5 +1,5 @@
 {
-  "name": "task-list-hw-react",
+  "name": "task-list-hw-react-mockapi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,7 +12,7 @@
     "react-scripts": "5.0.1",
     "redux-persist": "^6.0.0"
   },
-  "homepage": "https://TimurCherin.github.io/task-list-hw-react/",
+  "homepage": "https://TimurCherin.github.io/task-list-hw-react-mockapi/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
