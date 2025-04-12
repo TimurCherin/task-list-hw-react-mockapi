@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/task-list-hw-react-mockapi/static/css/main.71c3e152.css",
-    "main.js": "/task-list-hw-react-mockapi/static/js/main.c64748ed.js",
+    "main.js": "/task-list-hw-react-mockapi/static/js/main.9c113100.js",
     "index.html": "/task-list-hw-react-mockapi/index.html",
     "main.71c3e152.css.map": "/task-list-hw-react-mockapi/static/css/main.71c3e152.css.map",
-    "main.c64748ed.js.map": "/task-list-hw-react-mockapi/static/js/main.c64748ed.js.map"
+    "main.9c113100.js.map": "/task-list-hw-react-mockapi/static/js/main.9c113100.js.map"
   },
   "entrypoints": [
     "static/css/main.71c3e152.css",
-    "static/js/main.c64748ed.js"
+    "static/js/main.9c113100.js"
   ]
 }
