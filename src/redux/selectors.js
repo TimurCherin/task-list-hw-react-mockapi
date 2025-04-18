@@ -1,10 +1,10 @@
 import { createSelector } from 'reselect';
+import { selectAllContacts } from './contactsSlice';
 
-export const selectContacts = (state) => state.contacts.items;
 export const selectFilter = (state) => state.filter;
 
 export const selectFilteredContacts = createSelector(
-  [selectContacts, selectFilter],
+  [selectAllContacts, selectFilter],
   (contacts, filter) => {
     return contacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
