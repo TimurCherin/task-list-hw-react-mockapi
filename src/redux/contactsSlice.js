@@ -10,6 +10,7 @@ const contactsAdapter = createEntityAdapter({
 const initialState = contactsAdapter.getInitialState({
   isLoading: false,
   error: null,
+  filter: '',
 });
 
 export const fetchContacts = createAsyncThunk('contacts/fetchAll', async () => {
@@ -20,7 +21,7 @@ export const fetchContacts = createAsyncThunk('contacts/fetchAll', async () => {
 export const addContact = createAsyncThunk('contacts/addContact', async (contact) => {
   const response = await axios.post(BASE_URL, contact);
   return response.data;
-});     
+});
 
 export const deleteContact = createAsyncThunk('contacts/deleteContact', async (contactId) => {
   await axios.delete(`${BASE_URL}/${contactId}`);
@@ -30,6 +31,11 @@ export const deleteContact = createAsyncThunk('contacts/deleteContact', async (c
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
+  reducers: {
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchContacts.pending, (state) => {
@@ -53,7 +59,20 @@ const contactsSlice = createSlice({
   },
 });
 
-export const { selectAll: selectAllContacts, selectById: selectContactById } =
-  contactsAdapter.getSelectors((state) => state.contacts);
+export const {
+  selectAll: selectAllContacts,
+  selectById: selectContactById,
+  selectIds: selectContactIds,
+} = contactsAdapter.getSelectors((state) => state.contacts);
+
+export const selectFilteredContacts = (state) => {
+  const filter = state.contacts.filter.toLowerCase();
+  return selectAllContacts(state).filter(
+    (contact) =>
+      contact.name.toLowerCase().includes(filter) || contact.number.includes(filter)
+  );
+};
+
+export const { setFilter } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
