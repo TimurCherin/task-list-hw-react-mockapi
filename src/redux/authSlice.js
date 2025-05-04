@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
-const BASE_URL = 'https://67de5562471aaaa7428400b2.mockapi.io/contact';
 
 const saveUserToLocalStorage = (user, token) => {
   localStorage.setItem('user', JSON.stringify(user));
