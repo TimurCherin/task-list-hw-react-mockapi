@@ -13,7 +13,7 @@ const App = () => {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route
-            path="/contacts"
+            path="/"
             element={
               <div>
                 <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px' }}>
@@ -27,7 +27,7 @@ const App = () => {
               </div>
             }
           />
-          <Route path="/" element={<Navigate to="/contacts" />} />
+          <Route path="/" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </div>

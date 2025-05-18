@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault();
     dispatch(register({ email, password, name })).then((result) => {
       if (result.meta.requestStatus === 'fulfilled') {
-        navigate('/contacts');
+        navigate('/');
       }
     });
   };
